@@ -1,0 +1,108 @@
+{% extends 'Base_Sample.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    {% if user.is_authenticated %}
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ user.get_full_name }}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-success{% endif %}">
+                        <i class="fas {% if message.tags == 'error' %}fa-exclamation-circle{% else %}fa-check-circle{% endif %}"></i>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <br>
+            <div class="btn-flex">
+                <a class="btn btn-primary" href="{% url 'edit_profile' %}">
+                    <i class="fas fa-user-edit"></i>
+                    <span class="mobile-hide">Edit Profile</span>
+                </a>
+                <a class="btn btn-primary" href="{% url 'password_change' %}">
+                    <i class="fas fa-lock"></i>
+                    <span class="mobile-hide">Change password</span>
+                </a>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-3 mx-auto">
+                    <div class="card">
+                        <img src="{{ user.picture.url }}" class="dashboard-img">
+                        <div class="program-description">
+                            <p><strong>Last login: </strong>{{ user.last_login|date }}</p>
+                            <p><strong>Full Name: </strong>{{ user.get_full_name|title }}</p>
+                            <p><strong>Role: </strong>{{ user.get_role }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mx-auto">
+                    <div class="card">
+                        {% if user.is_lecturer %}
+                            <p class="form-title"><i class="fas fa-book-open"></i>My Courses</p>
+                            <div class="dashboard-description">
+                                {% if courses %}
+                                    <div class="flex">
+                                        {% for course in courses %}
+                                            <div class="flex">
+                                                <a class="edit-btn" href="{{ course.get_absolute_url }}">{{ course }}</a>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    <div class="text-danger"><i class="far fa-frown"></i>No courses!</div>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+
+                        <h4><hr><p class="title-info"><i class="fas fa-user"></i> Personal Info</p><hr></h4>
+                        <div class="dashboard-description">
+                            <p><strong>First Name:</strong> {{ user.first_name|title }}</p>
+                            <p><strong>Last Name:</strong> {{ user.last_name|title }}</p>
+                            <p><strong>ID No.:</strong> {{ user.username }}</p>
+                        </div>
+
+                        {% if user.is_student %}
+                            <h4><hr><p class="title-info"><i class="fas fa-user"></i> Applicant Info</p><hr></h4>
+                            <div class="dashboard-description">
+                                <p><strong>Level: </strong>{{ level.level }}</p>
+                            </div>
+                        {% endif %}
+
+                        <h4><hr><p class="title-info"><i class="fas fa-user"></i> Contact Info</p><hr></h4>
+                        <div class="dashboard-description">
+                            <p><strong>Email:</strong> {{ user.email }}</p>
+                            <p><strong>Tel No.:</strong> {{ user.phone }}</p>
+                            <p><strong>Address/city:</strong> {{ user.address }}</p>
+                        </div>
+
+                        <h4><hr><p class="title-info"><i class="fas fa-user"></i> Session Info </p><hr></h4>
+                        <div class="dashboard-description">
+                            <p><strong>Last login:</strong> {{ user.last_login }}</p>
+                            <p><strong>Academic Year:</strong> {{ current_trimester }} Trimester {{ current_session }}</p>
+                            <p><strong>Registered Date:</strong> {{ user.date_joined|date }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mx-auto"></div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}

@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7c6b7275-d81d-48ee-a088-c779aaf857bc" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/int_dev_env/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/quiz/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-734">
+              <caret line="428" column="34" selection-start-line="428" selection-start-column="34" selection-end-line="428" selection-end-column="34" />
+              <folding>
+                <element signature="e#1305#1619#0" />
+                <element signature="e#1659#1737#0" />
+                <element signature="e#2639#3668#0" />
+                <element signature="e#3781#4743#0" />
+                <element signature="e#4821#5019#0" />
+                <element signature="e#5134#6571#0" />
+                <element signature="e#6624#6828#0" />
+                <element signature="e#6938#7082#0" />
+                <element signature="e#7128#7403#0" />
+                <element signature="e#7160#7403#0" />
+                <element signature="e#7505#8068#0" />
+                <element signature="e#8222#8776#0" />
+                <element signature="e#8909#9599#0" />
+                <element signature="e#9685#14859#0" />
+                <element signature="e#9879#11444#0" />
+                <element signature="e#11495#11790#0" />
+                <element signature="e#11831#11932#0" />
+                <element signature="e#11974#12465#0" />
+                <element signature="e#12517#12926#0" />
+                <element signature="e#13965#14859#0" />
+                <element signature="e#14977#15963#0" />
+                <element signature="e#16060#17302#0" />
+                <element signature="e#17571#19022#0" />
+                <element signature="e#19073#19259#0" />
+                <element signature="e#19300#19409#0" />
+                <element signature="e#19451#20073#0" />
+                <element signature="e#20125#20521#0" />
+                <element signature="e#23763#23803#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pyt_tutorial/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="30" column="12" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="12" />
+              <folding>
+                <element signature="e#314#323#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1017" />
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>quiz.</find>
+      <find>main</find>
+      <find>quiz-timerz</find>
+      <find>quiz-timer</find>
+      <find>print</find>
+      <find>save</find>
+      <find>get_score</find>
+      <find>max_score</find>
+      <find>Quiz Result</find>
+      <find>your answer was</find>
+      <find>user_was_incorrect</find>
+      <find>your answer w</find>
+      <find>models.ForeignKey(settings.AUTH_USER_MODEL</find>
+      <find>SessionTimeoutMiddleware</find>
+      <find>django.contrib.auth.urls</find>
+      <find>login.html</find>
+      <find>LOGIN</find>
+      <find>login</find>
+      <find>login-form</find>
+      <find>admin</find>
+      <find>messa</find>
+      <find>logout</find>
+      <find>pytest_django</find>
+      <find>fail_silently</find>
+      <find>form</find>
+      <find>sess</find>
+      <find>student das</find>
+      <find>http404</find>
+      <find>add_p</find>
+      <find>testuser_</find>
+    </findStrings>
+    <dirStrings>
+      <dir>C:\Users\HP\Desktop\Dissertation_V1\accounts</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/templates/accounts/profile.html" />
+        <option value="$PROJECT_DIR$/templates/accounts/profile_from_admin.html" />
+        <option value="$PROJECT_DIR$/templates/accounts/lecturer_list.html" />
+        <option value="$PROJECT_DIR$/templates/registration/password_reset_done.html" />
+        <option value="$PROJECT_DIR$/templates/registration/login.html" />
+        <option value="$PROJECT_DIR$/search/templatetags/class_name.py" />
+        <option value="$PROJECT_DIR$/search/views.py" />
+        <option value="$PROJECT_DIR$/pyt_tutorial/urls.py" />
+        <option value="$PROJECT_DIR$/lookup/apps.py" />
+        <option value="$PROJECT_DIR$/lookup/views.py" />
+        <option value="$PROJECT_DIR$/templates/result/lecturer_confirm_score.html" />
+        <option value="$PROJECT_DIR$/course/migrations/0001_initial.py" />
+        <option value="$PROJECT_DIR$/lookup/templatetags/class_name.py" />
+        <option value="$PROJECT_DIR$/templates/lookup/lookup_view.html" />
+        <option value="$PROJECT_DIR$/templates/lookup/lookup_view_s.html" />
+        <option value="$PROJECT_DIR$/institution/apps.py" />
+        <option value="$PROJECT_DIR$/scores/apps.py" />
+        <option value="$PROJECT_DIR$/scores/models.py" />
+        <option value="$PROJECT_DIR$/templates/course/course_view.html" />
+        <option value="$PROJECT_DIR$/templates/quiz/quiz_form.html" />
+        <option value="$PROJECT_DIR$/templates/Base_Question.html" />
+        <option value="$PROJECT_DIR$/templates/quiz/quiz_list.html" />
+        <option value="$PROJECT_DIR$/templates/question.html" />
+        <option value="$PROJECT_DIR$/templates/quiz/execute_code.html" />
+        <option value="$PROJECT_DIR$/templates/quiz/essay_question_form.html" />
+        <option value="$PROJECT_DIR$/scores/views.py" />
+        <option value="$PROJECT_DIR$/templates/result.html" />
+        <option value="$PROJECT_DIR$/course/models.py" />
+        <option value="$PROJECT_DIR$/institution/models.py" />
+        <option value="$PROJECT_DIR$/templates/institution/dashboard.html" />
+        <option value="$PROJECT_DIR$/pytest.ini" />
+        <option value="$PROJECT_DIR$/templates/Base_Sample.html" />
+        <option value="$PROJECT_DIR$/accounts/urls.py" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/institution/views.py" />
+        <option value="$PROJECT_DIR$/accounts/decorators.py" />
+        <option value="$PROJECT_DIR$/accounts/models.py" />
+        <option value="$PROJECT_DIR$/accounts/Templates/Base_Reg_login.html" />
+        <option value="$PROJECT_DIR$/accounts/views.py" />
+        <option value="$PROJECT_DIR$/course/forms.py" />
+        <option value="$PROJECT_DIR$/quiz/forms.py" />
+        <option value="$PROJECT_DIR$/quiz/views.py" />
+        <option value="$PROJECT_DIR$/quiz/models.py" />
+        <option value="$PROJECT_DIR$/quiz/templatetags/quiz_tags.py" />
+        <option value="$PROJECT_DIR$/tests/test_example1.py" />
+        <option value="$PROJECT_DIR$/accounts/tests.py" />
+        <option value="$PROJECT_DIR$/course/tests.py" />
+        <option value="$PROJECT_DIR$/institution/tests.py" />
+        <option value="$PROJECT_DIR$/quiz/tests.py" />
+        <option value="$PROJECT_DIR$/int_dev_env/views.py" />
+        <option value="$PROJECT_DIR$/pyt_tutorial/settings.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="671" />
+    <option name="width" value="698" />
+    <option name="height" value="745" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Dissertation_V1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dissertation_V1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dissertation_V1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dissertation_V1" type="462c0819:PsiDirectoryNode" />
+              <item name="pyt_tutorial" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyFindUsagesOptions">
+    <option name="isSearchForTextOccurrences" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HP\Desktop\Dissertation_V1\templates" />
+      <recent name="C:\Users\HP\Desktop\Dissertation_V1\templates\search" />
+      <recent name="C:\Users\HP\Desktop\Dissertation_V1\templates\quiz" />
+      <recent name="C:\Users\HP\Desktop\Dissertation_V1\templates\registration" />
+      <recent name="C:\Users\HP\Desktop\Dissertation_V1" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.manage">
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Dissertation_V1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\HP\Desktop\Dissertation_V1\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for accounts.tests.YourTestCase" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Dissertation_V1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;accounts.tests.YourTestCase&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for accounts.tests.YourTestCase.test_profile_from_admin" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Dissertation_V1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;accounts.tests.YourTestCase.test_profile_from_admin&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for tests.LecturerAddViewTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Dissertation_V1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/accounts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.LecturerAddViewTest&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for tests.LecturerAddViewTest.test_lecturer_add_view" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Dissertation_V1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/accounts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.LecturerAddViewTest.test_lecturer_add_view&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for tests.LecturerAddViewTest.test_lecturer_add_view_requires_authentication" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Dissertation_V1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/accounts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.LecturerAddViewTest.test_lecturer_add_view_requires_authentication&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.manage" />
+      <item itemvalue="Python tests.Unittests for tests.LecturerAddViewTest" />
+      <item itemvalue="Python tests.Unittests for tests.LecturerAddViewTest.test_lecturer_add_view" />
+      <item itemvalue="Python tests.Unittests for tests.LecturerAddViewTest.test_lecturer_add_view_requires_authentication" />
+      <item itemvalue="Python tests.Unittests for accounts.tests.YourTestCase.test_profile_from_admin" />
+      <item itemvalue="Python tests.Unittests for accounts.tests.YourTestCase" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Unittests for accounts.tests.YourTestCase" />
+        <item itemvalue="Python tests.Unittests for accounts.tests.YourTestCase.test_profile_from_admin" />
+        <item itemvalue="Python tests.Unittests for tests.LecturerAddViewTest.test_lecturer_add_view" />
+        <item itemvalue="Python tests.Unittests for tests.LecturerAddViewTest.test_lecturer_add_view_requires_authentication" />
+        <item itemvalue="Python tests.Unittests for tests.LecturerAddViewTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7c6b7275-d81d-48ee-a088-c779aaf857bc" name="Default Changelist" comment="" />
+      <created>1689220068956</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1689220068956</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Test included">
+      <created>1695260733824</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695260733959</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_for_tests_LecturerAddViewTest - 2023.09.16 at 22h 59m 35s.xml">
+      <configuration name="Unittests for tests.LecturerAddViewTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_tests_LecturerAddViewTest - 2023.09.16 at 22h 59m 53s.xml">
+      <configuration name="Unittests for tests.LecturerAddViewTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_tests_LecturerAddViewTest - 2023.09.16 at 23h 00m 15s.xml">
+      <configuration name="Unittests for tests.LecturerAddViewTest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_tests_LecturerAddViewTest_test_lecturer_add_view_requires_authentication - 2023.09.16 at 23h 00m 32s.xml">
+      <configuration name="Unittests for tests.LecturerAddViewTest.test_lecturer_add_view_requires_authentication" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_tests_LecturerAddViewTest_test_lecturer_add_view - 2023.09.16 at 23h 00m 42s.xml">
+      <configuration name="Unittests for tests.LecturerAddViewTest.test_lecturer_add_view" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_tests_LecturerAddViewTest_test_lecturer_add_view - 2023.09.16 at 23h 02m 07s.xml">
+      <configuration name="Unittests for tests.LecturerAddViewTest.test_lecturer_add_view" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_accounts_tests_YourTestCase_test_profile_from_admin - 2023.09.16 at 23h 46m 20s.xml">
+      <configuration name="Unittests for accounts.tests.YourTestCase.test_profile_from_admin" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_accounts_tests_YourTestCase - 2023.09.17 at 08h 38m 30s.xml">
+      <configuration name="Unittests for accounts.tests.YourTestCase" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="TodoView" selected-index="1">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12127976" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.31078905" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2431562" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32850242" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.22544283" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.2447665" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32850242" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Test included" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test included" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/templates/registration/password_reset.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/registration/password_reset_complete.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/registration/password_reset_confirm.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/registration/registration_base.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/registration/register.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/registration/password_reset_done.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/django/contrib/auth/decorators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/registration/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306">
+          <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pytest.ini" />
+    <entry file="file://$PROJECT_DIR$/.pytest_cache/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/django/contrib/auth/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-363">
+          <caret line="359" column="6" selection-start-line="359" selection-start-column="6" selection-end-line="359" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lookup/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scores/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="90" column="17" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="17" />
+          <folding>
+            <element signature="e#408#471#0" />
+            <element signature="e#567#671#0" />
+            <element signature="e#720#755#0" />
+            <element signature="e#807#1604#0" />
+            <element signature="e#2289#2355#0" />
+            <element signature="e#2388#2450#0" />
+            <element signature="e#2497#2521#0" />
+            <element signature="e#2570#2780#0" />
+            <element signature="e#2824#2932#0" />
+            <element signature="e#2974#3308#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/question.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="366" column="14" lean-forward="true" selection-start-line="350" selection-start-column="8" selection-end-line="366" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#2;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#2;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#4;n#div#2;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/correct_answer.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/decorators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="41" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/validators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scores/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="69" column="62" lean-forward="true" selection-start-line="69" selection-start-column="62" selection-end-line="69" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/Base_Sample.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="107" column="54" selection-start-line="107" selection-start-column="54" selection-end-line="107" selection-end-column="54" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/pytz/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="122" column="4" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/Templates/Base_Reg_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="111" column="68" lean-forward="true" selection-end-line="128" selection-end-column="61" />
+          <folding>
+            <element signature="e#494#983#0" />
+            <element signature="e#1925#2076#0" />
+            <element signature="e#2109#2167#0" />
+            <element signature="e#2215#2383#0" />
+            <element signature="e#2417#2571#0" />
+            <element signature="e#2613#2673#0" />
+            <element signature="e#2720#3033#0" />
+            <element signature="e#3082#3222#0" />
+            <element signature="e#3263#3585#0" />
+            <element signature="e#3894#3927#0" />
+            <element signature="e#3969#4029#0" />
+            <element signature="e#4078#4139#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="34" column="56" selection-end-line="114" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#4932#5909#0" />
+            <element signature="e#5974#6258#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-329">
+          <caret line="423" selection-start-line="423" selection-end-line="445" />
+          <folding>
+            <element signature="e#839#867#0" />
+            <element signature="e#1744#2053#0" />
+            <element signature="e#2118#2616#0" />
+            <element signature="e#2672#3114#0" />
+            <element signature="e#3187#3682#0" />
+            <element signature="e#3757#3936#0" />
+            <element signature="e#3991#4459#0" />
+            <element signature="e#4268#4456#0" />
+            <element signature="e#4511#5225#0" />
+            <element signature="e#4579#4986#0" />
+            <element signature="e#4736#4902#0" />
+            <element signature="e#5129#5222#0" />
+            <element signature="e#5299#5984#0" />
+            <element signature="e#5386#5810#0" />
+            <element signature="e#5560#5726#0" />
+            <element signature="e#6060#6248#0" />
+            <element signature="e#14858#15862#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/institution/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="178" column="15" lean-forward="true" selection-start-line="178" selection-start-column="15" selection-end-line="178" selection-end-column="15" />
+          <folding>
+            <element signature="e#446#643#0" />
+            <element signature="e#688#1678#0" />
+            <element signature="e#1728#2323#0" />
+            <element signature="e#2393#2555#0" />
+            <element signature="e#2646#2806#0" />
+            <element signature="e#2878#3406#0" />
+            <element signature="e#3485#4113#0" />
+            <element signature="e#4192#4520#0" />
+            <element signature="e#4616#4792#0" />
+            <element signature="e#4867#7006#0" />
+            <element signature="e#7088#8349#0" />
+            <element signature="e#8431#8773#0" />
+            <element signature="e#8840#8892#0" />
+            <element signature="e#8894#8938#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="60" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/institution/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="46" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/institution/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="67" column="6" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#889#939#0" />
+            <element signature="e#1812#1829#0" />
+            <element signature="e#2277#2296#0" />
+            <element signature="e#2859#2880#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/institution/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+          <folding>
+            <element signature="e#847#1796#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="67" column="6" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#1143#1160#0" />
+            <element signature="e#1202#1258#0" />
+            <element signature="e#1302#1726#0" />
+            <element signature="e#2572#2620#0" />
+            <element signature="e#2662#2721#0" />
+            <element signature="e#2785#2975#0" />
+            <element signature="e#3047#3124#0" />
+            <element signature="e#3674#3708#0" />
+            <element signature="e#3750#3813#0" />
+            <element signature="e#4432#4457#0" />
+            <element signature="e#4502#4920#0" />
+            <element signature="e#4969#5027#0" />
+            <element signature="e#5647#5669#0" />
+            <element signature="e#5711#5801#0" />
+            <element signature="e#5850#5909#0" />
+            <element signature="e#5980#6057#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/django/forms/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="478" column="6" selection-start-line="478" selection-start-column="6" selection-end-line="478" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quiz/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-910">
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quiz/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="75" />
+          <folding>
+            <element signature="e#2646#2675#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quiz/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#16323#16467#0" />
+            <element signature="e#16510#16628#0" />
+            <element signature="e#16676#16897#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_example1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1185">
+          <caret line="106" column="70" selection-start-line="106" selection-start-column="70" selection-end-line="106" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quiz/templatetags/quiz_tags.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#61#129#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quiz/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="94" selection-start-line="16" selection-start-column="82" selection-end-line="16" selection-end-column="94" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="76" column="23" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/course/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1632">
+          <caret line="96" selection-start-column="2" selection-end-line="96" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/institution/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="41" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quiz/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1479">
+          <caret line="101" column="58" selection-start-line="101" selection-start-column="58" selection-end-line="101" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2482">
+          <caret line="245" selection-start-line="245" selection-end-line="252" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+            <element signature="e#957#1007#0" />
+            <element signature="e#1550#1721#0" />
+            <element signature="e#1751#2182#0" />
+            <element signature="e#2227#3727#0" />
+            <element signature="e#3803#5395#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1017" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/int_dev_env/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quiz/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-734">
+          <caret line="428" column="34" selection-start-line="428" selection-start-column="34" selection-end-line="428" selection-end-column="34" />
+          <folding>
+            <element signature="e#1305#1619#0" />
+            <element signature="e#1659#1737#0" />
+            <element signature="e#2639#3668#0" />
+            <element signature="e#3781#4743#0" />
+            <element signature="e#4821#5019#0" />
+            <element signature="e#5134#6571#0" />
+            <element signature="e#6624#6828#0" />
+            <element signature="e#6938#7082#0" />
+            <element signature="e#7128#7403#0" />
+            <element signature="e#7160#7403#0" />
+            <element signature="e#7505#8068#0" />
+            <element signature="e#8222#8776#0" />
+            <element signature="e#8909#9599#0" />
+            <element signature="e#9685#14859#0" />
+            <element signature="e#9879#11444#0" />
+            <element signature="e#11495#11790#0" />
+            <element signature="e#11831#11932#0" />
+            <element signature="e#11974#12465#0" />
+            <element signature="e#12517#12926#0" />
+            <element signature="e#13965#14859#0" />
+            <element signature="e#14977#15963#0" />
+            <element signature="e#16060#17302#0" />
+            <element signature="e#17571#19022#0" />
+            <element signature="e#19073#19259#0" />
+            <element signature="e#19300#19409#0" />
+            <element signature="e#19451#20073#0" />
+            <element signature="e#20125#20521#0" />
+            <element signature="e#23763#23803#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyt_tutorial/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="12" />
+          <folding>
+            <element signature="e#314#323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

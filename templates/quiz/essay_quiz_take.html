@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Essay Quiz: {{ quiz.title }}</h1>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit Answer">
+  </form>
+
+  <p>Question {{ question.id }}:</p>
+  <p>{{ question.content }}</p>
+
+  <a href="{% url 'essay_quiz_take' course.slug quiz.pk %}">Next Question</a>
+  <!-- Replace 'course.slug' and 'quiz.pk' with appropriate context variables -->
+
+{% endblock %}

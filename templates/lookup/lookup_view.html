@@ -1,0 +1,52 @@
+{% extends 'Base_Sample.html' %}
+{% load class_name %}
+
+{% block content %}
+<div id="input-nav" class="p-3">
+    <p class="text-muted m-0">About {{ count }} results for <b><em class="text-orange"> {{ query }}</em></b></p>
+</div>
+<br><br>
+
+<div class="card p-3 shadow-sm rounded">
+    <h4 class="text-muted">About {{ count }} results for <b><em class="text-orange"> {{ query }}</em></b></h4>
+    <hr>
+    {% for object in object_list %}
+        <div class="session-wrapper">
+            <div class="session"><div class="info-text bg-orange">
+                {% if object|class_name == 'Program' %}Program{% endif %}
+                {% if object|class_name == 'Course' %}Course{% endif %}
+                {% if object|class_name == 'NewPost' %}News And Events{% endif %}
+                {% if object|class_name == 'Quiz' %}Quiz{% endif %}
+            </div></div>
+        </div>
+        <div class='col-12 class-item' style="border-left: 4px solid #6cbd45;">
+            <h4><a href='{{ object.get_absolute_url }}'><b>{{ object.title }}</b></a></h4>
+            <p>{{ object.summary }}</p>
+        </div>
+        <hr>
+    {% empty %}
+    <div class='row'>
+        <div class="col-12 text-center"><p><i class="far fa-frown fa-2x"></i> No result for your search</p></div>
+        <div class='col-12 col-md-6 mx-auto my-5 py-5'>
+            <form method='GET' class='' action='.'>
+                <div class="input-group form-group-no-border mx-auto" style="margin-bottom: 0px; font-size: 32px;">
+                    <input type="text" name="q" data-toggle="popover" data-placement="bottom" data-content="Press enter to search" class="form-control cfe-nav mt-0 py-3" placeholder="Search..." value="{{ request.GET.q }}" data-original-title="" title="" autofocus="autofocus" required>
+                    <button type="submit" class="btn btn-outline-secondary">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-12 pl-5">
+            <h5>Search by using:</h5>
+            <ul class="pl-3">
+                <li>Program <span class="text-orange">></span> Title or Description</li>
+                <li>Course <span class="text-orange">></span> Title, Code or Description</li>
+                <li>News And Events <span class="text-orange">></span> Title, Description or just by typing "news" or "event"</li>
+                <li>Quiz <span class="text-orange">></span> Title, Description or Category (practice, assignment, and exam)</li>
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

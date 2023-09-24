@@ -1,0 +1,33 @@
+{% extends 'Base_Sample.html' %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work in Progress</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Work in Progress</h1>
+        <p>This page shows that work is ongoing.</p>
+        
+        <!-- Bootstrap Progress Bar -->
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50% Complete</div>
+        </div>
+
+        <!-- You can update the progress as needed using JavaScript or Django templates -->
+        <!-- For example, in Django, you can pass the progress value from the view -->
+        <!-- and use it to dynamically set the width of the progress bar. -->
+
+        <p class="mt-3">Please wait while the work is being completed...</p>
+    </div>
+
+    <!-- Include Bootstrap JS (optional) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+{% endblock %}
+

@@ -1,0 +1,64 @@
+{% extends 'Base_Sample.html' %}
+{% block content %}
+
+<div id="input-nav"><a href="{% url 'home' %}" class="primary1">Home</a> <i>&rsaquo;</i>
+    <a href="{% url 'programs' %}" class="primary1"> Programs</a> <i>&rsaquo;</i>
+    <a href="{% url 'program_detail' course.program.id %}" class="primary1"> {{ course.program }}</a> <i>&rsaquo;</i>
+    <a href="{{ course.get_absolute_url }}" class="primary1">{{ course }}</a> <i>&rsaquo;</i>
+    <a href="{% url 'quiz_index' course.slug %}" class="primary1">Quiz list</a> <i>&rsaquo;</i> Essay Question add for {{ quiz_obj }}</div>
+
+<div class="container">
+
+    <div class="header-title-xl text-center mt-4">Questions form for {{ quiz_obj }}</div>
+    <div class="title-line mb-5"></div>
+
+    <div class="info-text bg-orange mb-3">{{ quizQuestions }} question added</div>
+
+<form method="post">{% csrf_token %}
+    {% if form.errors %}<p class="alert alert-danger">Correct the error(s) below.</p>{% endif %}
+        <div class="row">
+            <div class="col mx-3 py-4 border bg-white">
+                <div class="form-group" hidden>
+                    <label for="title">{{ form.quiz.label }}</label> {{ form.quiz }}
+                    <span class="danger">{{ form.quiz.errors }}</span>
+                    <small class="d-block text-muted">Hold down "Control", or "Command" on a Mac, to select more than one.</small>
+                </div>
+                <div class="form-group">
+                    <h6><label for="content">{{ form.content.label }}</label> {{ form.content }}</h6>
+                    <span class="danger">{{ form.content.errors }}</span>
+                    <small class="d-block text-muted">Enter the question text that you want displayed.</small>
+                </div>
+                <div class="form-group">
+                    <h6><label for="figure">{{ form.figure.label }}</label> {{ form.figure }}</h6>
+                    <span class="danger">{{ form.figure.errors }}</span>
+                    <small class="d-block text-muted">Add an image for the question if it's necessary.</small>
+                </div>
+                <div class="form-group">
+                    <h6><label for="explanation">{{ form.explanation.label }}</label> {{ form.explanation }}</h6>
+                    <span class="danger">{{ form.explanation.errors }}</span>
+                    <small class="d-block text-muted">Explanation to be shown after the question has been answered.</small>
+                </div>
+            </div>
+            <div class="col mx-3 py-4 border bg-white">
+                <div class="form-group">
+                    <h6><label for="expected_input">{{ form.expected_input.label }}</label> {{ form.expected_input }}</h6>
+                    <span class="danger">{{ form.expected_input.errors }}</span>
+                    <small class="d-block text-muted">Enter the expected Code Input for this Question</small>
+                </div>
+                <div class="form-group">
+                   <h6> <label for="expected_output">{{ form.expected_output.label }}</label> {{ form.expected_output }}</h6>
+                    <span class="danger">{{ form.expected_output.errors }}</span>
+                    <small class="d-block text-muted">Enter the expected Code Output for this question</small>
+                </div>
+            </div>
+        </div>
+
+    <center>
+        <input type="submit" name="another" value="Submit and Add Another" class="btn btn-lg btn-primary my-4">
+        <input type="submit" name="submit" value="Submit" class="btn btn-lg btn-outline-primary">
+    </center>
+
+</form>
+
+</div>
+{% endblock %}

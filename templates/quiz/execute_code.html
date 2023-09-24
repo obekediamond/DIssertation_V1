@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n%}{% block title %} {{ quiz.title }} {% endblock %}
+{% block description %} {{ quiz.title }} - {{ quiz.description }} {% endblock %}
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Tutorial</title>
+    <link rel="stylesheet" href="{% static 'lib/bootstrap/dist/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/site.css' %}" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="font-awesome.css">
+    <style>
+        .hidden {
+        display: none;
+        }
+        .navbar-nav li {
+            border: 2px solid gold;
+            border-radius: 12px;
+            margin: 5px;
+            padding: 12px;
+            background-color: midnightblue;
+            transition: all 0.3s ease-in-out;
+            color: white;
+        }
+
+        .navbar-nav li:hover {
+            border: 2px solid gold;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+            background-color: gold;
+        }
+        .navbar-nav li a {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: #2c3e50;
+        }
+
+        h1 {
+            color: #1abc9c;
+            text-align: center;
+            margin-top: 50px;
+        }
+        body {
+            margin-bottom: 100px; /* Add margin to the bottom of the body equal to the height of the footer */
+        }
+
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: midnightblue;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+
+        .dropdown-content a {
+          color: white;
+          padding: 12px;
+          text-decoration: none;
+          display: block;
+        }
+
+        .dropdown-content a:hover {
+          background-color: gold;
+          color: midnightblue;
+        }
+
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+
+        .capitalize {
+            text-transform: capitalize;}
+
+        .bars{
+            position: absolute;
+            top:80px;
+            left: 0px;
+            font-size: 1.5rem;
+            background-color: midnightblue;
+            color: grey;}
+
+}
+    </style>
+</head>
+<body>
+    <header>
+   <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-0 mt-0 custom">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}" style="font-size: 28px; font-weight:bolder; color: gold; font-family:Arial, Helvetica, sans-serif">
+            Python Tutorial
+        </a>
+        <ul class="navbar-nav flex-grow-1 justify-content-end">
+                <li class="nav-item" style="border: 2px solid gold; border-radius: 12px; margin: 5px; padding: 12px; background-color: midnightblue; color: white;">
+                    <span class="nav-link" style="color: white;">Welcome, {{ request.user.get_role }}</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}" style="color: white;">Logout</a>
+                </li>
+        </ul>
+    </div>
+    </nav>
+    <nav class="navbar sticky-top navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mt-0 mb-0 flex-column">
+    <div class="container mt-8">
+    <form class="form-header" action="{% url 'query' %}" method="GET">
+        <div class="input-group">
+            <input id="primary-search" class="form-control form-control-xl" type="text" name="q" value="{{ request.GET.q }}"
+                placeholder="Search for content here" required />
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-search"> Go </i>
+                </button>
+            </div>
+        </div>
+    </form>
+    </div>
+    <div class="container">
+            <button id="toggleNavbarBtn" class="bars" ><div class="bars"><i class="fa fa-bars"></i></div></button>
+        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse flex-column">
+            <ul class="navbar-nav flex-grow-1 justify-content-between">
+                <li class="dropdown">
+                    <a class="nav-link" style="color: white;">Dashboard</a>
+                    <div class="dropdown-content" style="border: 2px solid gold; border-radius: 12px; margin: 5px; padding: 12px; background-color: midnightblue; color: white;">
+                        <a href="{% url 'home' %}" style="font-size: 14px;">Home</a></div>
+                </li>
+                <li class="dropdown">
+                    <a class="nav-link" style="color: white;">Courses and Programs</a>
+                    <div class="dropdown-content" style="border: 2px solid gold; border-radius: 12px; margin: 5px; padding: 12px; background-color: midnightblue; color: white;">
+                        <a href="{% url 'programs' %}" style="font-size: 14px;">Program</a>
+                        {% if request.user.is_lecturer or request.user.is_student %}
+                        <a href="{% url 'user_course_list' %}" style="font-size: 14px;">Courses</a>
+                        {% endif %}
+                        {% if request.user.is_student %}
+                        <a href="{% url 'student_add_course' %}" style="font-size: 14px;">Add/Drop Course</a>
+                        {% endif %}
+                      </div>
+                </li>
+                <li class="dropdown">
+                    <a class="nav-link" style="color: white;">Assessments</a>
+                    <div class="dropdown-content" style="border: 2px solid gold; border-radius: 12px; margin: 5px; padding: 12px; background-color: midnightblue; color: white;">
+                        {% if request.user.is_lecturer %}
+                        <a href="{% url 'quiz_marking' %}" style="font-size: 14px;">Complete Exams</a>
+                        {% endif %}
+                        <a href="{% url 'quiz_progress' %}" style="font-size: 14px;">Quiz Progress</a>
+                      </div>
+                </li>
+                {% if request.user.is_lecturer or request.user.is_student %}
+                <li class="dropdown">
+                    <a class="nav-link" style="color: white;">Grades</a>
+                    <div class="dropdown-content" style="border: 2px solid gold; border-radius: 12px; margin: 5px; padding: 12px; background-color: midnightblue; color: white;">
+                        {% if request.user.is_lecturer %}
+                        <a href="{% url 'provisional_score' %}" style="font-size: 14px;">Manage Score</a>
+                        {% endif %}
+                        {% if request.user.is_student %}
+                        <a href="{% url 'grade_results' %}" style="font-size: 14px;">Grade Results</a>
+                        <a href="{% url 'ass_results' %}" style="font-size: 14px;">Assessment Results</a>
+                        {% endif %}
+                      </div>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'dashboard' %}" style="color: white;">Analytics</a>
+                </li>
+                </li>
+                {% if request.user.is_superuser %}
+                <li class="dropdown">
+                    <a class="nav-link" style="color: white;">Administration</a>
+                    <div class="dropdown-content" style="border: 2px solid gold; border-radius: 12px; margin: 5px; padding: 12px; background-color: midnightblue; color: white;">
+                        <a href="{% url 'session_list' %}" style="font-size: 14px;">Manage Session</a>
+                        <a href="{% url 'trimester_list' %}" style="font-size: 14px;">Manage Trimester</a>
+                        <a href="{% url 'view_allocated_course' %}" style="font-size: 14px;">Course Allocation</a>
+                        <a href="{% url 'lecturer_list' %}" style="font-size: 14px;">Lecturers</a>
+                        <a href="{% url 'student_list' %}" style="font-size: 14px;">Students</a>
+                      </div>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'int_dev_env:execute_code' %}" style="color: white;">Python IDE</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    </header>
+
+<div style="display: flex;">
+   <nav id="sidebarMenu" style="width: 20%; background-color: midnightblue; padding: 20px;">
+    <div class="text-center mb-3">
+        <img class="profile-pic" src="{{ request.user.picture.url }}" style="max-width: 100%; height: auto;">
+        <h3 class="text-body-secondary capitalize" style="color:white">{{ request.user.get_full_name }}</h3>
+    </div>
+
+    {% if request.user.is_lecturer or request.user.is_student %}
+    <a class="btn btn-light btn-block mb-2" style="border: 1px solid gold;" href="{% url 'user_course_list' %}">
+        <i class="fas fa-book"></i> My Courses
+    </a>
+    {% endif %}
+    <a class="btn btn-light btn-block mb-2"style="border: 1px solid gold;" href="{% url 'profile' %}">
+        <i class="fas fa-user"></i> Profile
+    </a>
+
+    <a class="btn btn-light btn-block mb-2" style="border: 1px solid gold;"href="{% url 'edit_profile' %}">
+        <i class="fas fa-cogs"></i> Setting
+    </a>
+    <hr>
+    <hr>
+    <p class="text-muted text-center">
+        Last login: {{ request.user.last_login|date }}</p>
+    <hr>
+    <hr>
+</nav>
+
+<div class="container" style="width: 80%;">
+    <main role="main" class="pb-3">
+        <div id="quiz-timer" class="text-center">
+    <h3>Quiz Timer</h3>
+    <div class="bg-light p-3 rounded">
+        <span id="timer-minutes" class="display-4">00</span>:<span id="timer-seconds" class="display-4">00</span>
+    </div>
+</div>
+        </main>
+
+
+<div id="input-nav"><a href="{% url 'home' %}" class="primary1">Home</a> <i>&rsaquo;</i>
+	<a href="{% url 'programs' %}" class="primary1">Programs </a> <i>&rsaquo;</i>
+	<a href="{% url 'program_detail' course.program.id %}" class="primary1">{{ course.program }} </a> <i>&rsaquo;</i>
+	<a href="{{ course.get_absolute_url }}" class="primary1">{{ course }} </a> <i>&rsaquo;</i>
+	<a href="{% url 'quiz_index' course.slug %}" class="primary1">Quizzes</a> <i>&rsaquo;</i> {{ quiz.title|title }}</div>
+
+<div class="container">
+
+    <div class="header-title-xl text-center">{{ quiz.title|title }}</div>
+    <div class="title-line mb-2"></div>
+
+	{% if previous.answers %}
+
+	<p class="muted"><small>{% trans "The previous question" %}:</small></p>
+	<p>{{ previous.previous_question }}</p>
+
+	{% if previous.previous_outcome %}
+		<div class="alert alert-success">
+	{% else %}
+		<div class="alert alert-warning">
+	{% endif %}
+		<p><small>
+			{% trans "Your answer was" %} </small>
+			<strong>
+			{{ previous.previous_outcome|yesno:"correct,incorrect" }}
+			</strong>
+		</p>
+		</div>
+        {% load i18n %}
+        {% if previous.answers %}
+
+          {% if user_was_incorrect %}
+            <div class="alert alert-error">
+              <strong>{% trans "You answered the above question incorrectly" %}</strong>
+            </div>
+          {% endif %}
+
+          <table class="table table-striped table-bordered">
+            <tbody>
+                {% if answer.correct %}
+                  <tr class="success">
+                    <td>{{ previous.answers }}</td><br>
+                    <td>{{ previous.output_str }}</td>
+                    <td>{{ previous.error_str }}</td>
+                  <td><strong>{% trans "This is the correct answer" %}</strong></td>
+                {% else %}
+                  <tr>
+                    <td>{{ previous.answers }}</td>
+                    <td>
+                    {% if previous.question_type.MCQuestion %}
+                      {% if answer.id|add:"0" == previous.previous_answer|add:"0" %}
+                        {% trans "This was your answer." %}
+                      {% endif %}
+                    {% endif %}
+                    </td>
+                  {% endif %}
+                  </tr>
+            </tbody>
+          </table>
+        {% endif %}
+
+
+        <p><strong>{% trans "Explanation" %}:</strong></p>
+        <p class="p-2" style="background-color: #fcf8e3;">
+          {% if previous.previous_question.explanation %}
+            {{ previous.previous_question.explanation }}
+          {% else %}
+            {% trans "No explanation set to this question." %}
+          {% endif %}
+		</p>
+
+		<hr>
+
+	{% endif %}
+
+	<br />
+
+	{% if progress.0|add:1 == 1 %}
+
+    <div id="popup-box-messages">
+        <div class="box-messages">
+            <a id="popup-btn-messages" class="btn btn-light"><i class="fas fa-times"></i></a>
+			<div class="lead">Quiz instractions</div>
+			<div class="alert alert-warning">
+				<p>
+					You can't go back to the previous question after you submit it,
+					so double check your answer before proceeding to the next one!
+				</p>
+			</div>
+			<button id="popup-btn-messages" type="button" class="btn btn-primary" data-dismiss="modal">Understood</button>
+        </div>
+	</div>
+	{% endif %}
+
+	{% if progress %}
+	<div class="info-text bg-danger" style="float: right;">
+	{% trans "Question" %} {{ progress.0|add:1 }} {% trans "of" %} {{ progress.1 }}
+	</div>
+	{% endif %}
+
+	<p>
+		<small class="muted">{% trans "Quiz category" %}:</small>
+		<strong>{{ quiz.category }}</strong>
+	</p>
+
+	<div class="card">
+		<div class="card-title lead bg-light p-2">{{ questions.content }}</div>
+		{% if question.figure %}
+		<div class="col-md-8 mx-auto">
+			<img class="q-img" src="{{ question.figure.url }}" alt="{{ question.content }}" style="max-width: 100%;"/>
+		</div>
+		{% endif %}
+		<div class="card">
+    <form method="post" id="quiz-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-large btn-block btn-primary">Submit</button>
+    </form>
+		</div></div></div></div>
+
+
+</div>
+
+</div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <div class="row" style="margin-bottom:0;">
+            </div>
+            <div class="row">
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'lib/jquery/dist/jquery.min.js' %}?v={{ STATICFILES_VERSION }}"></script>
+    <script src="{% static 'lib/bootstrap/dist/js/bootstrap.bundle.min.js' %}?v={{ STATICFILES_VERSION }}"></script>
+    <script src="{% static 'js/site.js' %}?v={{ STATICFILES_VERSION }}"></script>
+    <script>
+    const toggleNavbarBtn = document.getElementById('toggleNavbarBtn');
+    const sidebarMenu = document.getElementById('sidebarMenu');
+
+    // Retrieve the saved state from localStorage when the page loads
+    const isNavbarHidden = localStorage.getItem('navbarHidden');
+    if (isNavbarHidden === 'true') {
+        sidebarMenu.classList.add('hidden');
+    }
+
+    toggleNavbarBtn.addEventListener('click', () => {
+        sidebarMenu.classList.toggle('hidden');
+
+        // Store the updated state in localStorage
+        localStorage.setItem('navbarHidden', sidebarMenu.classList.contains('hidden'));
+    });
+
+
+
+var countdown; // Define the countdown variable
+
+function startTimer(duration) {
+    var timer = duration, minutes, seconds;
+    countdown = setInterval(function () { // Store the interval ID in countdown
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        // Update only the text content of the timer elements
+        document.getElementById("timer-minutes").textContent = minutes;
+        document.getElementById("timer-seconds").textContent = seconds;
+
+        if (--timer < 0) {
+            clearInterval(countdown); // Stop the countdown using clearInterval
+            document.getElementById("quiz-form").submit();
+        }
+    }, 1000);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    var timerDurationInSeconds = {{ quiz.timer }} * 60; // Convert minutes to seconds
+    var display = document.querySelector("#quiz-timer");
+    startTimer(timerDurationInSeconds, display);
+
+    // Find the form element by its ID
+    var quizForm = document.getElementById("quiz-form");
+
+    // Submit the form when the timer reaches zero
+    function submitFormOnTimeout() {
+        clearInterval(countdown); // Stop the countdown using clearInterval
+        quizForm.submit(); // Submit the form
+    }
+
+    // Set a timeout to submit the form when the timer reaches zero
+    setTimeout(submitFormOnTimeout, timerDurationInSeconds * 1000); // Convert seconds to milliseconds
+});
+</script>
+
+</body>
+</html>

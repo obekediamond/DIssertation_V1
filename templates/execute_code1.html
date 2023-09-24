@@ -1,0 +1,48 @@
+{% extends "Base_Sample.html" %}
+{% load i18n%}{% block title %} {{ quiz.title }} {% endblock %}
+{% block description %} {{ quiz.title }} - {{ quiz.description }} {% endblock %}
+{% block content %}
+<div id="input-nav"><a href="{% url 'home' %}" class="primary1">Home</a>
+
+<div class="container">
+
+    <div class="header-title-xl text-center">Online Integrated Development Environment</div>
+    <div class="title-line mb-2"></div>
+
+	<br />
+
+	<p>
+		<small class="muted">Practice Code</small>
+		<strong>Practice</strong>
+	</p>
+
+	<div class="card">
+		<div class="card-title lead bg-light p-2">Self Practice Coding Environment</div>
+		<div class="card">
+     <form method="post">Sandboxed IDE (RestrictedPython):
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-large btn-block btn-primary">Submit</button>
+    </form>
+			<br>
+    <h2>Result:</h2>
+    <pre>{{ result }}</pre>
+    <h2>Output:</h2>
+    <pre>{{ output }}</pre>
+    <h2>Error:</h2>
+    <pre>{{ error }}</pre>
+		</div></div></div></div>
+{% endblock %}
+
+{% block js %}
+<script>
+const popupMessagesButtons = document.querySelectorAll('#popup-btn-messages');
+
+for (const button of popupMessagesButtons) {
+    button.addEventListener('click', () => {
+        document.getElementById('popup-box-messages').style.display = 'none';
+    })
+}
+
+</script>
+{% endblock js %}

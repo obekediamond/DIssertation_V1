@@ -1,0 +1,102 @@
+{% extends 'Base_Sample.html' %}
+{% load class_name %}
+
+{% block content %}
+<div id="input-nav" class="p-3">
+    <p class="text-muted m-0"> {{ count }} results for <b><em class="text-orange"> {{ query }}</em></b></p>
+</div>
+<br><br>
+
+<div class="card p-3" style="box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3); border-radius: 10px;">
+    <h4 class="text-muted m-0"> {{ count }} results for <b><em class="text-orange"> {{ query }}</em></b></h4>
+    <hr>
+
+    {% for object in object_list %}
+        {% with object|class_name as klass %}
+            {% if klass == 'Program' %}
+                <div class="session-wrapper">
+                    <div class="session"><div class="info-text bg-orange">Program</div></div>
+                </div>
+                <div class="col-12 class-item border-left border-success">
+                    <h4><a href='{{ object.get_absolute_url }}'><b>{{ object.title }}</b></a></h4>
+                    <p>{{ object.summary }}</p>
+                </div>
+                <hr>
+            {% elif klass == 'Course' %}
+                <div class="session-wrapper">
+                    <div class="session"><div class="info-text bg-orange">Course</div></div>
+                </div>
+                <div class="col-12 class-item border-left border-success">
+                    <p><b>Program of</b> {{ object.program }}</p>
+                    <h4><a href='{{ object.get_absolute_url }}'><b>{{ object }}</b></a></h4>
+                    <p>{{ object.summary }}</p>
+                </div>
+                <hr>
+            {% elif klass == 'NewPost' %}
+                <div class="session-wrapper">
+                    <div class="session"><div class="info-text bg-orange">News And Events</div></div>
+                </div>
+                <div class="col-12 class-item border-left border-success">
+                    <p><b>Date:</b> {{ object.updated_date|timesince }} ago</p>
+                    <h4><a href='{{ object.get_absolute_url }}'><b>{{ object.title }}</b></a></h4>
+                    <p>{{ object.summary }}</p>
+                </div>
+                <hr>
+            {% elif klass == 'Quiz' %}
+                <div class="session-wrapper">
+                    <div class="session"><div class="info-text bg-orange">Quiz</div></div>
+                </div>
+                <div class="col-12 class-item border-left border-success">
+                    <p>{{ object.category }} quiz, <b>Course:</b> {{ object.course }}</p>
+                    <h4><a href='{{ object.get_absolute_url }}'><b>{{ object.title }}</b></a></h4>
+                    <p>{{ object.description }}</p>
+                </div>
+                <hr>
+            {% else %}
+                <div class="session-wrapper">
+                    <div class="session"><div class="info-text bg-orange">Program</div></div>
+                </div>
+                <div class="col-12 class-item border-left border-success">
+                    <a href='{{ object.get_absolute_url }}' class="d-flex">
+                        {{ object }} | {{ object|class_name }}
+                    </a>
+                    <hr>
+                    <h4><a href='{{ object.get_absolute_url }}'>
+                        {{ object }} | <b>{{ object|class_name }}</b>
+                    </a></h4>
+                    <p>{{ object.description }}</p>
+                </div>
+                <hr>
+            {% endif %}
+        {% endwith %}
+    {% empty %}
+        <div class='row'>
+            <div class="col-12 text-center">
+                <p><i class="far fa-frown fa-2x"></i> No result for your search</p>
+            </div>
+            <div class='col-12 col-md-6 mx-auto my-5 py-5'>
+                <form class="form-header" action="{% url 'query' %}" method="GET">
+                    <div class="input-group form-group-no-border mx-auto" style="margin-bottom: 0px; font-size: 32px;">
+                        <input type="text" name="q" data-toggle="popover" data-placement="bottom"
+                            data-content="Press enter to search" class="form-control cfe-nav mt-0 py-3"
+                            placeholder="Search..." value="{{ request.GET.q }}" data-original-title="" title=""
+                            autofocus="autofocus" required>
+                        <button type="submit" class="btn btn-outline-secondary">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 pl-5">
+                <h5>Search by using:</h5>
+                <ul class="pl-3">
+                    <li>Post (News or Event) <span class="text-orange">&gt;</span> Title, Description or wildcards ("news" or "event")</li>
+                    <li>Quiz <span class="text-orange">&gt;</span> Title, Description or wildcards **</li>
+                    <li>Program <span class="text-orange">&gt;</span> Title or Description</li>
+                    <li>Course <span class="text-orange">&gt;</span> Title, Description or Course code</li>
+                </ul>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}

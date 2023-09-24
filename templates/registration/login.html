@@ -1,0 +1,50 @@
+{% extends 'Base_Reg_login.html' %}
+
+{% block content %}
+  <div class="content">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <div class="form-block">
+                <h3 class="lead p-2 bg-light">Login Page</h3>
+
+                <form method="post" id="login-form">
+                  {% csrf_token %}
+
+                  {% if form.errors %}
+                    <div class="alert alert-danger">
+                      {% for error in form.non_field_errors %}
+                        {{ error }}
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+
+                  <div class="form-group last mb-4">
+                    <label for="username_id"><i class="form-label"></i>Username</label>
+                    {{ form.username }}
+                  </div>
+                  <div class="form-group last mb-4">
+                    <label for="password_id"><i class="fas fa-key"></i>Password</label>
+                    {{ form.password }}
+                  </div>
+
+                  <div class="d-flex mb-5 align-items-center">
+                    <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+                      {{ form.remember_me }}
+                      <div class="control__indicator"></div>
+                    </label>
+                    <span class="ml-auto"><a href="{% url 'password_reset' %}" class="forgot-pass">Forgot Password</a></span>
+                  </div>
+                  <input type="submit" value="Log In" class="btn btn-pill text-white btn-block btn-primary">
+                </form>
+                <h3 class="lead p-2 bg-light">Please contact the admin (mailto: admin@admin.com) if you do not have an active account</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

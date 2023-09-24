@@ -1,0 +1,22 @@
+{% extends 'Base_Sample.html' %}
+{% block content %}
+<h1>Create an Essay Quiz</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.title.label_tag }} {{ form.title }}
+    {{ form.description.label_tag }} {{ form.description }}
+
+    <!-- Add fields for essay questions here -->
+    <h2>Essay Questions</h2>
+
+    <div class="essay-question">
+        {{ form.answers.label_tag }} {{ form.answers }}
+    </div>
+
+    <div class="essay-question">
+        {{ form.answers.label_tag }} {{ form.answers }}
+    </div>
+
+    <input type="submit" value="Create Quiz">
+</form>
+{% endblock %}

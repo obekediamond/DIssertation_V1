@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Tutorial</title>
+    <link rel="stylesheet" href="{% static 'lib/bootstrap/dist/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/site.css' %}" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="font-awesome.css">
+    <style>
+        .hidden {
+        display: none;
+        }
+        .navbar-nav li {
+            border: 2px solid gold;
+            border-radius: 12px;
+            margin: 5px;
+            padding: 12px;
+            background-color: midnightblue;
+            transition: all 0.3s ease-in-out;
+            color: white;
+        }
+
+        .navbar-nav li:hover {
+            border: 2px solid gold;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+            background-color: gold;
+        }
+        .navbar-nav li a {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: #2c3e50;
+        }
+
+        h1 {
+            color: #1abc9c;
+            text-align: center;
+            margin-top: 50px;
+        }
+        body {
+            margin-bottom: 100px; /* Add margin to the bottom of the body equal to the height of the footer */
+        }
+
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: midnightblue;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+
+        .dropdown-content a {
+          color: white;
+          padding: 12px;
+          text-decoration: none;
+          display: block;
+        }
+
+        .dropdown-content a:hover {
+          background-color: gold;
+          color: midnightblue;
+        }
+
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+
+        .capitalize {
+            text-transform: capitalize;}
+
+        .bars{
+            position: absolute;
+            top:80px;
+            left: 0px;
+            font-size: 1.5rem;
+            background-color: midnightblue;
+            color: grey;}
+
+}
+    </style>
+</head>
+<body>
+    <header>
+   <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-0 mt-0 custom">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}" style="font-size: 28px; font-weight:bolder; color: gold; font-family:Arial, Helvetica, sans-serif">
+            Python Tutorial
+        </a>
+        <ul class="navbar-nav flex-grow-1 justify-content-end">
+                <li class="nav-item" style="border: 2px solid gold; border-radius: 12px; margin: 5px; padding: 12px; background-color: midnightblue; color: white;">
+                    <span class="nav-link" style="color: white;">Welcome, {{ request.user.get_role }}</span>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}" style="color: white;">Logout</a>
+                </li>
+        </ul>
+    </div>
+    </nav>
+    <nav class="navbar sticky-top navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mt-0 mb-0 flex-column">
+    <div class="container mt-8">
+    <form class="form-header" action="{% url 'query' %}" method="GET">
+        <div class="input-group">
+            <input id="primary-search" class="form-control form-control-xl" type="text" name="q" value="{{ request.GET.q }}"
+                placeholder="Search for content here" required />
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-search"> Go </i>
+                </button>
+            </div>
+        </div>
+    </form>
+    </div>
+    <div class="container">
+            <button id="toggleNavbarBtn" class="bars" ><div class="bars"><i class="fa fa-bars"></i></div></button>
+        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse flex-column">
+            <ul class="navbar-nav flex-grow-1 justify-content-between">
+                <li class="dropdown">
+                    <a class="nav-link" style="color: white;">Dashboard</a>
+                    <div class="dropdown-content" style="border: 2px solid gold; border-radius: 12px; margin: 5px; padding: 12px; background-color: midnightblue; color: white;">
+                        <a href="{% url 'home' %}" style="font-size: 14px;">Home</a></div>
+                </li>
+                <li class="dropdown">
+                    <a class="nav-link" style="color: white;">Courses and Programs</a>
+                    <div class="dropdown-content" style="border: 2px solid gold; border-radius: 12px; margin: 5px; padding: 12px; background-color: midnightblue; color: white;">
+                        <a href="{% url 'programs' %}" style="font-size: 14px;">Program</a>
+                        {% if request.user.is_lecturer or request.user.is_student %}
+                        <a href="{% url 'user_course_list' %}" style="font-size: 14px;">Courses</a>
+                        {% endif %}
+                        {% if request.user.is_student %}
+                        <a href="{% url 'student_add_course' %}" style="font-size: 14px;">Add/Drop Course</a>
+                        {% endif %}
+                      </div>
+                </li>
+                <li class="dropdown">
+                    <a class="nav-link" style="color: white;">Assessments</a>
+                    <div class="dropdown-content" style="border: 2px solid gold; border-radius: 12px; margin: 5px; padding: 12px; background-color: midnightblue; color: white;">
+                        {% if request.user.is_lecturer %}
+                        <a href="{% url 'quiz_marking' %}" style="font-size: 14px;">Complete Exams</a>
+                        {% endif %}
+                        <a href="{% url 'quiz_progress' %}" style="font-size: 14px;">Quiz Progress</a>
+                      </div>
+                </li>
+                {% if request.user.is_lecturer or request.user.is_student %}
+                <li class="dropdown">
+                    <a class="nav-link" style="color: white;">Grades</a>
+                    <div class="dropdown-content" style="border: 2px solid gold; border-radius: 12px; margin: 5px; padding: 12px; background-color: midnightblue; color: white;">
+                        {% if request.user.is_lecturer %}
+                        <a href="{% url 'provisional_score' %}" style="font-size: 14px;">Manage Score</a>
+                        {% endif %}
+                        {% if request.user.is_student %}
+                        <a href="{% url 'grade_results' %}" style="font-size: 14px;">Grade Results</a>
+                        <a href="{% url 'ass_results' %}" style="font-size: 14px;">Assessment Results</a>
+                        {% endif %}
+                      </div>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'dashboard' %}" style="color: white;">Analytics</a>
+                </li>
+                </li>
+                {% if request.user.is_superuser %}
+                <li class="dropdown">
+                    <a class="nav-link" style="color: white;">Administration</a>
+                    <div class="dropdown-content" style="border: 2px solid gold; border-radius: 12px; margin: 5px; padding: 12px; background-color: midnightblue; color: white;">
+                        <a href="{% url 'session_list' %}" style="font-size: 14px;">Manage Session</a>
+                        <a href="{% url 'trimester_list' %}" style="font-size: 14px;">Manage Trimester</a>
+                        <a href="{% url 'view_allocated_course' %}" style="font-size: 14px;">Course Allocation</a>
+                        <a href="{% url 'lecturer_list' %}" style="font-size: 14px;">Lecturers</a>
+                        <a href="{% url 'student_list' %}" style="font-size: 14px;">Students</a>
+                      </div>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'int_dev_env:execute_code' %}" style="color: white;">Python IDE</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    </header>
+
+<div style="display: flex;">
+   <nav id="sidebarMenu" style="width: 20%; background-color: midnightblue; padding: 20px;">
+    <div class="text-center mb-3">
+        <img class="profile-pic" src="{{ request.user.picture.url }}" style="max-width: 100%; height: auto;">
+        <h3 class="text-body-secondary capitalize" style="color:white">{{ request.user.get_full_name }}</h3>
+    </div>
+
+    {% if request.user.is_lecturer or request.user.is_student %}
+    <a class="btn btn-light btn-block mb-2" style="border: 1px solid gold;" href="{% url 'user_course_list' %}">
+        <i class="fas fa-book"></i> My Courses
+    </a>
+    {% endif %}
+    <a class="btn btn-light btn-block mb-2"style="border: 1px solid gold;" href="{% url 'profile' %}">
+        <i class="fas fa-user"></i> Profile
+    </a>
+
+    <a class="btn btn-light btn-block mb-2" style="border: 1px solid gold;"href="{% url 'edit_profile' %}">
+        <i class="fas fa-cogs"></i> Setting
+    </a>
+    <hr>
+    <hr>
+    <p class="text-muted text-center">
+        Last login: {{ request.user.last_login|date }}</p>
+    <hr>
+    <hr>
+</nav>
+
+<div class="container" style="width: 80%;">
+    <main role="main" class="pb-3">
+        <div id="quiz-timer" class="text-center">
+    <h3>Quiz Timer</h3>
+    <div class="bg-light p-3 rounded">
+        <span id="timer-minutes" class="display-4">00</span>:<span id="timer-seconds" class="display-4">00</span>
+    </div>
+</div>
+        {% block content %}
+        {% endblock %}
+    </main>
+</div>
+
+</div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <div class="row" style="margin-bottom:0;">
+            </div>
+            <div class="row">
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'lib/jquery/dist/jquery.min.js' %}?v={{ STATICFILES_VERSION }}"></script>
+    <script src="{% static 'lib/bootstrap/dist/js/bootstrap.bundle.min.js' %}?v={{ STATICFILES_VERSION }}"></script>
+    <script src="{% static 'js/site.js' %}?v={{ STATICFILES_VERSION }}"></script>
+    <script>
+    const toggleNavbarBtn = document.getElementById('toggleNavbarBtn');
+    const sidebarMenu = document.getElementById('sidebarMenu');
+
+    // Retrieve the saved state from localStorage when the page loads
+    const isNavbarHidden = localStorage.getItem('navbarHidden');
+    if (isNavbarHidden === 'true') {
+        sidebarMenu.classList.add('hidden');
+    }
+
+    toggleNavbarBtn.addEventListener('click', () => {
+        sidebarMenu.classList.toggle('hidden');
+
+        // Store the updated state in localStorage
+        localStorage.setItem('navbarHidden', sidebarMenu.classList.contains('hidden'));
+    });
+
+
+
+function startTimer(duration) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        // Update only the text content of the timer elements
+        document.getElementById("timer-minutes").textContent = minutes;
+        document.getElementById("timer-seconds").textContent = seconds;
+
+        if (--timer < 0) {
+            clearInterval(countdown); // Stop the countdown
+            document.getElementById("quiz-form").submit();
+        }
+    }, 1000);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    var timerDurationInSeconds = {{ quiz.timer }} * 60; // Convert minutes to seconds
+    var display = document.querySelector("#quiz-timer");
+    startTimer(timerDurationInSeconds, display);
+});
+</script>
+
+</body>
+</html>

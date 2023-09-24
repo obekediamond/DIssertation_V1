@@ -1,0 +1,124 @@
+{% extends 'Base_Sample.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Lecturers</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    {% if request.user.is_superuser %}
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-primary" href="{% url 'add_lecturer' %}">
+                    <i class="fas fa-plus"></i> Add Lecturer
+                </a>
+            </div>
+        </div>
+    {% endif %}
+
+    <h4>Lecturers List</h4>
+    <div class="title-line"></div>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="{% if message.tags == 'error' %}errornote{% else %}successnote{% endif %}">
+                <i class="fas {% if message.tags == 'error' %}fa-exclamation-circle{% else %}fa-check-circle{% endif %}"></i>
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="content-center">
+        <form class="search-form" action="" method="POST">{% csrf_token %}
+            <input class="au-input" type="text" name="id_no" placeholder="ID No." value="{{ request.GET.id_no }}"/>
+            <input class="au-input" type="text" name="name" placeholder="Name" value="{{ request.GET.name }}"/>
+            <input class="au-input" type="text" name="email" placeholder="Email" value="{{ request.GET.email }}"/>
+            <button class="button" type="submit">
+                <i class="fas fa-search"></i> Filter
+            </button>
+        </form>
+    </div>
+
+    <div class="table-responsive p-0 mt-5">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th>#</th>
+                <th>ID No.</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Mob No.</th>
+                <th>Address/city</th>
+                <th>Last login</th>
+                {% if request.user.is_superuser %}
+                    <th scope="col">Actions</th>
+                {% endif %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for lecturer in object_list %}
+                <tr>
+                    <td>{{ forloop.counter }}.</td>
+                    <td>{{ lecturer.username }}</td>
+                    <td>
+                        <a href="{% url 'profile_from_admin' lecturer.id %}">{{ lecturer.get_full_name }}</a>
+                    </td>
+                    <td>{{ lecturer.email }}</td>
+                    <td>{{ lecturer.phone }}</td>
+                    <td>{{ lecturer.address }}</td>
+                    <td>{{ lecturer.last_login }}</td>
+                    {% if request.user.is_superuser %}
+                        <td>
+                            <div class="d-flex">
+                                <a href="{% url 'staff_edit' pk=lecturer.pk %}" class="btn btn-primary btn-sm mr-2"
+                                   title="Edit">
+                                    <i class="fas fa-pencil-alt"></i> Edit
+                                </a>
+                                <a href="{% url 'lecturer_delete' pk=lecturer.pk %}" class="btn btn-danger btn-sm"
+                                   title="Delete">
+                                    <i class="fas fa-trash-alt"></i> Delete
+                                </a>
+                            </div>
+                        </td>
+                    {% endif %}
+                </tr>
+            {% empty %}
+            <tr>
+                <td></td>
+                <td colspan="7" class="text-center">
+                    <span class="text-danger">
+                        <i class="far fa-frown"></i> No Lecturer(s).
+                        {% if request.user.is_superuser %}
+                            <a href="{% url 'add_lecturer' %}" class="primary" style="font-size: 22px;">Add Lecturer Now.</a>
+                        {% endif %}
+                    </span>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+<script>
+    const url = "/accounts/lecturers/";
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+</script>
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends 'Base_Sample.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<div class="container mt-4">
+<div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'student_list' %}">Students</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Add</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="mt-4">Add Lecturer</h2>
+            <hr class="title-line">
+        </div>
+    </div>
+
+    {% if messages %}
+        <div class="row">
+            <div class="col-md-12">
+                {% for message in messages %}
+                    <div class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-success{% endif %}" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+    <form action="" method="POST" class="mt-4">{% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Login Info</div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="{{ form.username.id_for_label }}">ID No.</label>
+                            {{ form.username }}
+                            <span class="text-danger">{{ form.username.errors }}</span>
+                            <small class="form-text text-muted">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.password1.id_for_label }}">{{ form.password1.label }}</label>
+                            {{ form.password1 }}
+                            <span class="text-danger">{{ form.password1.errors }}</span>
+                            <small class="form-text text-muted">
+                                The password can't be too similar to other personal information.<br>
+                                The password must contain at least 8 characters.<br>
+                                The password can't be a commonly used password.<br>
+                                The password can't be entirely numeric.
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.password2.id_for_label }}">{{ form.password2.label }}</label>
+                            {{ form.password2 }}
+                            <span class="text-danger">{{ form.password2.errors }}</span>
+                            <small class="form-text text-muted">Enter the same password as before, for verification.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Personal Info</div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}</label>
+                            {{ form.first_name }}
+                            <span class="text-danger">{{ form.first_name.errors }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}</label>
+                            {{ form.last_name }}
+                            <span class="text-danger">{{ form.last_name.errors }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                            {{ form.email }}
+                            <span class="text-danger">{{ form.email.errors }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.address.id_for_label }}">{{ form.address.label }}</label>
+                            {{ form.address }}
+                            <span class="text-danger">{{ form.address.errors }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.phone.id_for_label }}">{{ form.phone.label }}</label>
+                            {{ form.phone }}
+                            <span class="text-danger">{{ form.phone.errors }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+{% endblock content %}
